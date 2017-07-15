@@ -12,12 +12,7 @@ import keras
 
 # MODEL SETTING
 img_width, img_height = 150, 150
-train_data_dir = './dataset/train/'
-validation_data_dir = './dataset/validation/'
-nb_train_samples = 4000
-nb_validation_samples = 2000
-epochs = 2
-batch_size = 1
+
 
 trained_model_file = './weights.best.bigru_3conv_7.hdf5'
 
@@ -61,7 +56,7 @@ def make_callbacks():
 
 def build_model():
     """
-    return a myterious model
+    return a mysterious model
     """
 
     if K.image_data_format() == 'channels_first':

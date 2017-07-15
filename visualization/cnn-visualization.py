@@ -1,5 +1,6 @@
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
+from keras.models import Model
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import backend as K
@@ -8,16 +9,15 @@ from shutil import copyfile
 import shutil
 import sys
 import keras
+from keras.utils import plot_model
 
+
+import numpy as np
+from scipy.misc import imsave
 
 # MODEL SETTING
 img_width, img_height = 150, 150
-train_data_dir = './dataset/train/'
-validation_data_dir = './dataset/validation/'
-nb_train_samples = 4000
-nb_validation_samples = 2000
-epochs = 2
-batch_size = 1
+
 
 trained_model_file = './weights.best.bigru_3conv_7.hdf5'
 
@@ -61,12 +61,21 @@ def build_model():
 
     return model
 
-
-
+def get_outputs_generator(model, layer_name):
+    return Model(
+        input=model.input,
+        output=model.get_layer(layer_name).output
+    ).predict
 
 if __name__ == '__main__':
     model = build_model()
     model.load_weights(trained_model_file)
 
-    from quiver_engine import server
-    server.launch(model,input_folder='./visualization')
+    print(get_outputs_generator(model, 'conv2d_1'))
+
+    # for layer in model.output_layers:
+
+    # plot_model(model, to_file='model.png')
+
+    # from quiver_engine import server
+    # server.launch(model,input_folder='./visualization')
