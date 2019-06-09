@@ -4,7 +4,7 @@
 
   Contact: Phu H. Phung, email: phu@udayton.edu
   
-  Lastest Update: June 8, 2019. We are still in process to migrate the data and code from private repositories.
+  Latest Update: June 9, 2019. We are still in process to migrate the data and code from private repositories.
   
 ## Dataset
   The dataset contains 16,000 samples compressed in a single zip file of 2.4GB and is available on [Goolge Drive](http://bit.ly/hit4mal-dataset)
