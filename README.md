@@ -11,9 +11,9 @@
   
 ## Source code
 
-  See [src] (src) sub-folder.
+  See [src](src) sub-folder.
   
 ## Experimental Results
 
-  See [results] (results) sub-folder.
+  See [results](results) sub-folder.
 
