@@ -5,8 +5,10 @@ import string
 import sys
 import scurve
 from scurve import progress, utils, draw
-import Image
-import ImageDraw
+from PIL import Image
+from PIL import ImageDraw
+#import Image
+#import ImageDraw
 import itertools
 
 class _Color:
